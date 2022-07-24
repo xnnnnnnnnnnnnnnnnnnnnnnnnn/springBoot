@@ -7,7 +7,6 @@ public class Question {
     private String 答案;
 
 
-
     public int get题号() {
         return 题号;
     }
