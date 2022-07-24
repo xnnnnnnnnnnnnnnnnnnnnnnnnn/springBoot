@@ -4,8 +4,10 @@ import com.example.demo.dao.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
+import java.util.List;
+
 @Mapper
 public interface LoginMapper {
     @Select("select * from users")
-     String loginIS(String name,String password);
+    List<User> loginIS();
 }

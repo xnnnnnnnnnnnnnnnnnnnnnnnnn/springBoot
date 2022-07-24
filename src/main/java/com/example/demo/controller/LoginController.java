@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.dao.User;
+import com.example.demo.mapper.LoginMapper;
 import com.example.demo.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,10 +16,10 @@ import java.util.List;
 @Controller
 public class LoginController {
     @Autowired
-    private UserMapper userMapper;
+    private LoginMapper userMapper;
     @RequestMapping("/Is")
     public boolean LoginIs(@RequestBody String name,@RequestBody String password){  //前端需要使用post方式提交
-        List<User> list=userMapper.findAll();
+        List<User> list=userMapper.loginIS();
         for (User user1:list){
             System.out.println(user1);
             if(name.equals(user1.get用户名()) && user1.get密码().equals(password)){
